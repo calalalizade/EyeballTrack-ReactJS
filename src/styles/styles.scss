@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #ed213a;
+  background: -webkit-linear-gradient(to right, #93291e, #ed213a);
+  background: linear-gradient(to right, #93291e, #ed213a);
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 60px;
+
+  .eyebrow_container {
+    display: flex;
+    gap: 350px;
+
+    .eye_brow {
+      width: 180px;
+      height: 20px;
+      border-radius: 10px;
+      background-color: #000;
+    }
+
+    .left {
+      rotate: -20deg;
+      border-bottom-left-radius: 0px;
+      border-top-left-radius: 90px;
+    }
+    .right {
+      rotate: 20deg;
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 90px;
+    }
+  }
+
+  .eye_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    .eye {
+      position: relative;
+      display: inline-block;
+      border-radius: 50%;
+      height: 300px;
+      width: 300px;
+      background: #fff;
+      box-shadow: inset 0 0 50px rgb(0, 0, 0);
+      transition: scale 0.5s, background-color 0.5s, box-shadow 0.5s;
+
+      &:hover {
+        box-shadow: inset 0 0 100px rgb(255, 0, 0);
+        scale: 1 0.92;
+      }
+
+      &:active {
+        scale: 0.8 0.01;
+        background-color: #000;
+      }
+      &:active::after {
+        background-color: #000;
+        border: 20px solid #000;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &::after {
+        content: " ";
+        position: absolute;
+        bottom: 5%;
+        right: 50%;
+        width: 30px;
+        height: 30px;
+        background: #000;
+        border-radius: 50%;
+        border: 20px solid #2e536f;
+        pointer-events: none;
+        transition: 0.5s;
+      }
+    }
+  }
+}
